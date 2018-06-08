@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "759804596937",
+    "firebase_url": "https://acquaint-c5ff8.firebaseio.com",
+    "project_id": "acquaint-c5ff8",
+    "storage_bucket": "acquaint-c5ff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759804596937:android:67f1111183b31bce",
+        "android_client_info": {
+          "package_name": "com.verity.datlashiv.acquaint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759804596937-lnrv5c11j5kgfca31enttfhlvsv5dsp3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.verity.datlashiv.acquaint",
+            "certificate_hash": "a293ad9cb70ee81f2bc1d8548a0a6ea71c3b7575"
+          }
+        },
+        {
+          "client_id": "759804596937-rqrccpta93fqt2bk7sqco3cei7dvs2el.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "759804596937-rqrccpta93fqt2bk7sqco3cei7dvs2el.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsz5G6bln_dzKLbswoBjYbFcO4KODLhGs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759804596937-rqrccpta93fqt2bk7sqco3cei7dvs2el.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
