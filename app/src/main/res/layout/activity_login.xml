@@ -16,6 +16,9 @@
         android:drawableLeft="@drawable/ic_mail"
         android:drawablePadding="10dp"
         android:hint="Enter Email"
+        android:textColorHint="#dcd4d4"
+        android:textColor="#dcd4d4"
+        android:layout_marginTop="80dp"
         android:padding="20dp" />
 
 
@@ -28,6 +31,8 @@
         android:background="@drawable/edtbg"
         android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
         android:drawablePadding="10dp"
+        android:textColorHint="#dcd4d4"
+        android:textColor="#dcd4d4"
         android:hint="Enter Password"
         android:padding="20dp" />
 
@@ -36,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_pass"
-        android:background="#EE5A24"
+        android:background="#4b9ac9"
         android:layout_marginTop="20dp"
         android:text="Login"
         android:textColor="@android:color/white" />
@@ -57,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_btn"
-        android:background="#EE5A24"
+        android:background="#4b9ac9"
         android:layout_marginTop="60dp"
         android:text="Register"
         android:textColor="@android:color/white" />
