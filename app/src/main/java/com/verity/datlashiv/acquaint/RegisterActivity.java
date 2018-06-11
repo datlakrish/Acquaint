@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends AppCompatActivity {
 
     private EditText reg_name, reg_email, reg_pass;
     private Button reg_btn, reg_login_btn;
@@ -31,6 +31,8 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        getSupportActionBar().hide();
         init();
 
         mAuth = FirebaseAuth.getInstance();
@@ -43,7 +45,7 @@ public class RegisterActivity extends Activity {
 
                 if (reg_name.getText().toString().trim().isEmpty()) {
                     reg_name.requestFocus();
-                    reg_name.setError("provide username id");
+                    reg_name.setError("provide username");
 
                 } else if (reg_email.getText().toString().trim().isEmpty()) {
                     reg_email.requestFocus();
