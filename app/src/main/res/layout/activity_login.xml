@@ -15,7 +15,7 @@
         android:background="@drawable/edtbg"
         android:drawableLeft="@drawable/ic_mail"
         android:drawablePadding="10dp"
-        android:hint="Enter Email"
+        android:hint="Email"
         android:textColorHint="#dcd4d4"
         android:textColor="#dcd4d4"
         android:layout_marginTop="80dp"
@@ -33,7 +33,7 @@
         android:drawablePadding="10dp"
         android:textColorHint="#dcd4d4"
         android:textColor="#dcd4d4"
-        android:hint="Enter Password"
+        android:hint="Password"
         android:padding="20dp" />
 
     <Button

@@ -16,6 +16,8 @@
         android:hint="Enter User Name"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:background="@drawable/edtbg"
+        android:textColorHint="#dcd4d4"
+        android:textColor="#dcd4d4"
         android:padding="20dp" />
 
     <EditText
