@@ -8,18 +8,32 @@
     android:padding="20dp"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#dcd4d4"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/login_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/login_title"
+        android:layout_marginTop="10dp"
         android:background="@drawable/edtbg"
         android:drawableLeft="@drawable/ic_mail"
         android:drawablePadding="10dp"
         android:hint="Email"
-        android:textColorHint="#dcd4d4"
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
         android:textColor="#dcd4d4"
-        android:layout_marginTop="80dp"
-        android:padding="20dp" />
+        android:textColorHint="#dcd4d4" />
 
 
     <EditText
@@ -31,67 +45,78 @@
         android:background="@drawable/edtbg"
         android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
         android:drawablePadding="10dp"
-        android:textColorHint="#dcd4d4"
-        android:textColor="#dcd4d4"
         android:hint="Password"
-        android:padding="20dp" />
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="#dcd4d4"
+        android:textColorHint="#dcd4d4" />
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_pass"
-        android:background="#4b9ac9"
         android:layout_marginTop="20dp"
+        android:background="#4b9ac9"
         android:text="Login"
         android:textColor="@android:color/white" />
 
     <TextView
+        android:id="@+id/login_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="forgot password?"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/login_btn"
-        android:textSize="16sp"
-        android:textColor="#dcd4d4"
         android:layout_marginTop="10dp"
-       android:layout_alignParentRight="true"
-       />
+        android:text="forgot password?"
+        android:textColor="#dcd4d4"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/login_reg_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_btn"
-        android:background="#4b9ac9"
         android:layout_marginTop="60dp"
+        android:background="#4b9ac9"
         android:text="Register"
         android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/fb_btn"
-        android:layout_width="160dp"
-        android:layout_marginLeft="20dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:paddingLeft="20dp"
-        android:paddingRight="10dp"
-        android:text="FACEBOOK"
-        android:textColor="#dcd4d4"
-        android:drawableLeft="@drawable/facebook"
-        android:layout_alignParentBottom="true"/>
-    <Button
-        android:id="@+id/google_btn"
-        android:layout_width="150dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/border"
-        android:drawableLeft="@drawable/search"
-        android:paddingLeft="20dp"
-        android:paddingRight="10dp"
-        android:text="Google"
-        android:textColor="#dcd4d4"
-        android:layout_toRightOf="@id/fb_btn"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" />
+        android:orientation="horizontal"
+        android:weightSum="2">
 
+        <Button
+            android:id="@+id/fb_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/facebook"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="FACEBOOK"
+            android:textColor="#dcd4d4" />
+
+        <Button
+            android:id="@+id/google_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/fb_btn"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/search"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="Google"
+            android:textColor="#dcd4d4" />
+    </LinearLayout>
 
 </RelativeLayout>

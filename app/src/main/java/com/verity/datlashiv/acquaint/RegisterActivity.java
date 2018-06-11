@@ -1,5 +1,6 @@
 package com.verity.datlashiv.acquaint;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends Activity {
 
     private EditText reg_name, reg_email, reg_pass;
     private Button reg_btn, reg_login_btn;
@@ -39,28 +40,47 @@ public class RegisterActivity extends AppCompatActivity {
         reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = reg_name.getText().toString().trim();
-                String email = reg_email.getText().toString().trim();
-                String pass = reg_pass.getText().toString().trim();
 
-                mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+                if (reg_name.getText().toString().trim().isEmpty()) {
+                    reg_name.requestFocus();
+                    reg_name.setError("provide username id");
 
-                            Toast.makeText(RegisterActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                        } else {
+                } else if (reg_email.getText().toString().trim().isEmpty()) {
+                    reg_email.requestFocus();
+                    reg_email.setError("provide email id");
 
-                            Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                } else if (reg_pass.getText().toString().isEmpty()) {
+                    reg_pass.requestFocus();
+                    reg_pass.setError("provide password");
+
+                } else {
+                    String user = reg_name.getText().toString().trim();
+                    String email = reg_email.getText().toString().trim();
+                    String pass = reg_pass.getText().toString().trim();
+
+                    mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+
+                                Intent loginIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                                startActivity(loginIntent);
+                                finish();
+//                                Toast.makeText(RegisterActivity.this, "Success", Toast.LENGTH_SHORT).show();
+//
+                            } else {
+
+                                Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
 
-                String id = reference.push().getKey();
-                Model model = new Model(id, user, email, pass);
-                reference.child(id).setValue(model);
+                    String id = reference.push().getKey();
+                    Model model = new Model(id, user, email, pass);
+                    reference.child(id).setValue(model);
 
 
+                }
             }
         });
 
