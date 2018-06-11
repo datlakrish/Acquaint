@@ -49,8 +49,7 @@
         android:textSize="16sp"
         android:textColor="#dcd4d4"
         android:layout_marginTop="10dp"
-        android:layout_alignEnd="@id/login_btn"
-        android:layout_alignRight="@id/login_btn"
+       android:layout_alignParentRight="true"
        />
 
     <Button
@@ -74,8 +73,7 @@
         android:text="FACEBOOK"
         android:textColor="#dcd4d4"
         android:drawableLeft="@drawable/facebook"
-        android:layout_below="@id/login_reg_btn"
-        android:layout_marginTop="80dp"/>
+        android:layout_alignParentBottom="true"/>
     <Button
         android:id="@+id/google_btn"
         android:layout_width="150dp"
@@ -87,9 +85,8 @@
         android:text="Google"
         android:textColor="#dcd4d4"
         android:layout_toRightOf="@id/fb_btn"
-        android:layout_below="@id/login_reg_btn"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>
