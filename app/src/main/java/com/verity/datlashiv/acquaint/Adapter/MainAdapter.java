@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
-import com.verity.datlashiv.acquaint.R;
 
 import java.util.ArrayList;
 
@@ -25,8 +24,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.main_row, parent, false);
-        return new ViewHolder(view);
+        return null;
     }
 
     @Override

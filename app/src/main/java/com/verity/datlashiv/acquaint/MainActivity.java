@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,20 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private FirebaseAuth mAuth;
-    private RecyclerView recyclerView;
-    ArrayList<MainCourse> mainCourseArrayList;
+    private ViewFlipper viewFlipper;
+    private int view[] = {R.drawable.anydesk, R.drawable.chrom, R.drawable.os};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +36,11 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         mAuth = FirebaseAuth.getInstance();
 
+        viewFlipper = findViewById(R.id.viewFlipper);
 
-        recyclerView = findViewById(R.id.recycleView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        mainCourseArrayList = new ArrayList<>();
-
+        for (int views : view) {
+            viewFlipper(views);
+        }
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -131,5 +126,16 @@ public class MainActivity extends AppCompatActivity
         finish();
     }
 
+    public void viewFlipper(int views) {
+        ImageView imageview = new ImageView(this);
+        imageview.setBackgroundResource(views);
 
+        viewFlipper.addView(imageview);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+
+        //animation
+        viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
+    }
 }
