@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,15 +16,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button btn_logout;
+
     private FirebaseAuth mAuth;
+    private RecyclerView recyclerView;
+    ArrayList<MainCourse> mainCourseArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +38,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mAuth = FirebaseAuth.getInstance();
-        btn_logout = findViewById(R.id.main_logout);
 
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(logoutIntent);
-                finish();
-            }
-        });
+
+        recyclerView = findViewById(R.id.recycleView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mainCourseArrayList = new ArrayList<>();
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -99,18 +105,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_profile) {
+            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_tutorial) {
+            Toast.makeText(this, "Tutorial", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_codeground) {
+            Toast.makeText(this, "Code Ground", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_talkback) {
+            Toast.makeText(this, "Talk Back", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_logout) {
+            Logout();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -118,6 +123,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+    public void Logout() {
+        mAuth.signOut();
+        Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(logoutIntent);
+        finish();
+    }
 
 
 }
