@@ -56,10 +56,19 @@ public class MainActivity extends AppCompatActivity
                                 Intent i = new Intent (MainActivity.this, OsActivity.class);
                                 startActivity(i);
                                 break;
+                            case 1:
+                                Intent i2 = new Intent (MainActivity.this, LanguageActivity.class);
+                                startActivity(i2);
+                                break;
+                            case 2:
+                                Intent i3 = new Intent (MainActivity.this, DataBaseActivity.class);
+                                startActivity(i3);
+                                break;
+
                              }
 
 
-                        Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
