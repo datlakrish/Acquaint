@@ -1,4 +1,4 @@
-package com.verity.datlashiv.acquaint;
+package com.verity.datlashiv.acquaint.Activities;
 
 
 import android.content.Intent;
@@ -16,13 +16,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.verity.datlashiv.acquaint.ModelClasses.Model;
+import com.verity.datlashiv.acquaint.R;
 
 import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText reg_name, reg_email, reg_pass;
-    private Button reg_btn, reg_login_btn;
+    private Button reg_btn,reg_login_btn;
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private ArrayList<Model> modelArrayList;

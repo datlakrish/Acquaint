@@ -4,7 +4,7 @@ public class MainCourse {
     String name;
     String image;
 
-    public MainCourse() {
+    public MainCourse(String os_name) {
     }
 
     public MainCourse(String name, String image) {

@@ -1,0 +1,158 @@
+{
+"acquaint":[{
+
+"os_fields":[
+{"os_name" : "Windows"},
+{"os_name" : "Linux"},
+{"os_name" : "Unix"},
+{"os_name" : "Mac"}
+],
+
+"Database_fields":[
+
+{"db_name" :"Mysql" },
+{"db_name" : "Oracle"},
+{"db_name" : "Mogodb"},
+{"db_name" : "Sqlite"}
+],
+
+
+"Windows_concepts":[
+{"windows_name":"windows Concept one"},
+{"windows_name":"windows Concept two"},
+{"windows_name":"windows Concept three"},
+{"windows_name":"windows Concept four"},
+{"windows_name":"windows Concept five"},
+{"windows_name":"windows Concept six"}
+],
+
+"Linux_concepts":[
+{"linux_name":"linux Concept one"},
+{"linux_name":"linux Concept two"},
+{"linux_name":"linux Concept three"},
+{"linux_name":"linux Concept four"},
+{"linux_name":"linux Concept five"},
+{"linux_name":"linux Concept six"}
+],
+
+"Unix_concepts":[
+{"unix_name":"unix Concept one"},
+{"unix_name":"unix Concept two"},
+{"unix_name":"unix Concept three"},
+{"unix_name":"unix Concept four"},
+{"unix_name":"unix Concept five"},
+{"unix_name":"unix Concept six"}
+],
+
+"Mac_concepts":[
+{"mac_name":"mac Concept one"},
+{"mac_name":"mac Concept two"},
+{"mac_name":"mac Concept three"},
+{"mac_name":"mac Concept four"},
+{"mac_name":"mac Concept five"},
+{"mac_name":"mac Concept six"}
+],
+
+"mysql_concepts":[
+{"mysql_name":"mysql Concept one"},
+{"mysql_name":"mysql Concept two"},
+{"mysql_name":"mysql Concept three"},
+{"mysql_name":"mysql Concept four"},
+{"mysql_name":"mysql Concept five"},
+{"mysql_name":"mysql Concept six"}
+],
+
+"oracle_concepts":[
+{"oracle_name":"oracle Concept one"},
+{"oracle_name":"oracle Concept two"},
+{"oracle_name":"oracle Concept three"},
+{"oracle_name":"oracle Concept four"},
+{"oracle_name":"oracle Concept five"},
+{"oracle_name":"oracle Concept six"}
+],
+
+"mongodb_concepts":[
+{"mongodb_name":"mongodb Concept one"},
+{"mongodb_name":"mongodb Concept two"},
+{"mongodb_name":"mongodb Concept three"},
+{"mongodb_name":"mongodb Concept four"},
+{"mongodb_name":"mongodb Concept five"},
+{"mongodb_name":"mongodb Concept six"}
+],
+
+"sqlite_concepts":[
+{"sqlite_name":"sqlite Concept one"},
+{"sqlite_name":"sqlite Concept two"},
+{"sqlite_name":"sqlite Concept three"},
+{"sqlite_name":"sqlite Concept four"},
+{"sqlite_name":"sqlite Concept five"},
+{"sqlite_name":"sqlite Concept six"}
+],
+
+"course_fields":[
+{"co_name" : "C"},
+{"co_name" : "java"},
+{"co_name" : ".Net"},
+{"co_name" : "Php"},
+{"co_name" : "Android"},
+{"co_name" : "HTML"}
+],
+
+"C_concepts":[
+{"c_name":"c Concept one"},
+{"c_name":"c Concept two"},
+{"c_name":"c Concept three"},
+{"c_name":"c Concept four"},
+{"c_name":"c Concept five"},
+{"c_name":"c Concept six"}
+],
+
+
+"java_concepts":[
+{"java_name":"Java Concept one"},
+{"java_name":"Java Concept two"},
+{"java_name":"Java Concept three"},
+{"java_name":"Java Concept four"},
+{"java_name":"Java Concept five"},
+{"java_name":"Java Concept six"}
+],
+
+".Net_concepts":[
+{"net_name":".net Concept one"},
+{"net_name":".net Concept two"},
+{"net_name":".net Concept three"},
+{"net_name":".net Concept four"},
+{"net_name":".net Concept five"},
+{"net_name":".net Concept six"}
+],
+
+"php_concepts":[
+{"php_name":"php Concept one"},
+{"php_name":"php Concept two"},
+{"php_name":"php Concept three"},
+{"php_name":"php Concept four"},
+{"php_name":"php Concept five"},
+{"php_name":"php Concept six"}
+],
+
+"android_concepts":[
+{"android_name":"android Concept one"},
+{"android_name":"android Concept two"},
+{"android_name":"android Concept three"},
+{"android_name":"android Concept four"},
+{"android_name":"android Concept five"},
+{"android_name":"android Concept six"}
+],
+
+"html_concepts":[
+{"html_name":"html Concept one"},
+{"html_name":"html Concept two"},
+{"html_name":"html Concept three"},
+{"html_name":"html Concept four"},
+{"html_name":"html Concept five"},
+{"html_name":"html Concept six"}
+]
+
+}]
+
+}

@@ -1,4 +1,4 @@
-package com.verity.datlashiv.acquaint;
+package com.verity.datlashiv.acquaint.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.verity.datlashiv.acquaint.Adapter.MainAdapter;
+import com.verity.datlashiv.acquaint.R;
+import com.verity.datlashiv.acquaint.RecyclerItemClickListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +47,23 @@ public class MainActivity extends AppCompatActivity
         adapter = new MainAdapter(this);
         recyclerView.setAdapter(adapter);
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        // do whatever
+                        switch (position){
+                            case 0:
+                                Intent i = new Intent (MainActivity.this,OsActivity.class);
+                                startActivity(i);
+                                break;
+                        }
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
 
 

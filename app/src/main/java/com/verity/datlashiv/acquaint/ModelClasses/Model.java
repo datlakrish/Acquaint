@@ -1,4 +1,4 @@
-package com.verity.datlashiv.acquaint;
+package com.verity.datlashiv.acquaint.ModelClasses;
 
 public class Model {
 
