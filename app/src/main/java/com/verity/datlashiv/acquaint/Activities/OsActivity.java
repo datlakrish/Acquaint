@@ -33,24 +33,31 @@ public class OsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_os);
         rv = findViewById(R.id.recyclerView_view);
-        recyclerAdapter = new RecyclerAdapter(getApplicationContext(),mc);
-        rv.setAdapter(recyclerAdapter);
-        mc = new ArrayList<>();
-        rv.setHasFixedSize(true);
-       rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
+
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        mc = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(RawJson());
-            JSONArray jsonArray = jsonObject.getJSONArray("os_fields");
-            for(int i=0; i < jsonArray.length(); i++){
+            JSONArray jsonArray = jsonObject.getJSONArray("acquaint");
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
-                //Log.i("Name", object.getString("name"));
-                mc.add(new MainCourse(object.getString("os_name")));
+                JSONArray array = object.getJSONArray("os_fields");
+                for (int j = 0; j < array.length(); j++) {
+                    JSONObject object1 = array.getJSONObject(j);
+
+                    mc.add(new MainCourse(  object1.getString("os_name")
+                    ));
+                }
+
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
+        rv.setAdapter(recyclerAdapter);
 
 
     }
@@ -61,7 +68,7 @@ public class OsActivity extends AppCompatActivity {
         try {
             InputStream inputStream = getResources().openRawResource(R.raw.raws);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
-            while ((JSONString = bufferedReader.readLine())!= null){
+            while ((JSONString = bufferedReader.readLine()) != null) {
                 builder.append(JSONString);
             }
         } catch (IOException e) {

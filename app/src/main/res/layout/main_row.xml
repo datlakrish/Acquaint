@@ -29,6 +29,7 @@
                 android:layout_toRightOf="@id/image_row"
                 android:fontFamily="sans-serif"
                 android:text="Sample"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 

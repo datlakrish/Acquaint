@@ -50,13 +50,16 @@ public class MainActivity extends AppCompatActivity
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-                        // do whatever
+
                         switch (position){
-                            case 0:
-                                Intent i = new Intent (MainActivity.this,OsActivity.class);
+                           case 0:
+                                Intent i = new Intent (MainActivity.this, OsActivity.class);
                                 startActivity(i);
                                 break;
-                        }
+                             }
+
+
+                        Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
