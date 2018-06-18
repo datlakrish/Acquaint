@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
+    android:background="#dfe6e9"
     tools:showIn="@layout/app_bar_main">
 
     <ViewFlipper
         android:id="@+id/viewFlipper"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewFlipper"
+        android:layout_marginTop="5dp" />
 
 </RelativeLayout>

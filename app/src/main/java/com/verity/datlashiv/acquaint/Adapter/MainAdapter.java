@@ -6,45 +6,55 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 
-import java.util.ArrayList;
+import com.verity.datlashiv.acquaint.R;
+
+
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<MainCourse> course;
+    private int image[] = {R.drawable.os, R.drawable.chrom, R.drawable.lang};
+    private String[] name = {"OS", "Languages", "DataBase"};
 
-    public MainAdapter(Context context, ArrayList<MainCourse> course) {
+
+    public MainAdapter(Context context) {
         this.context = context;
-        this.course = course;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.main_row, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MainCourse row = course.get(position);
+        holder.titleview.setText(name[position]);
+        holder.imageview.setImageResource(image[position]);
 
     }
 
     @Override
     public int getItemCount() {
-        return course.size();
+        return image.length;
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-
+        TextView titleview;
+        ImageView imageview;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            titleview = itemView.findViewById(R.id.title_row);
+            imageview = itemView.findViewById(R.id.image_row);
         }
     }
 }
