@@ -1,13 +1,16 @@
 package com.verity.datlashiv.acquaint.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
+import com.verity.datlashiv.acquaint.RecyclerItemClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,16 +24,15 @@ import java.util.ArrayList;
 
 public class DataBaseActivity extends AppCompatActivity {
 
-    RecyclerView rv;
+    private RecyclerView rv;
     private RecyclerAdapter recyclerAdapter;
-    ArrayList<MainCourse> mc;
+    private ArrayList<MainCourse> mc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_os);
         rv = findViewById(R.id.recyclerView_view);
-
 
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -44,7 +46,7 @@ public class DataBaseActivity extends AppCompatActivity {
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(  object1.getString("db_name")
+                    mc.add(new MainCourse(object1.getString("db_name")
                     ));
                 }
 
@@ -55,6 +57,19 @@ public class DataBaseActivity extends AppCompatActivity {
         }
         recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
         rv.setAdapter(recyclerAdapter);
+
+        rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(DataBaseActivity.this, OsActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
 
 
     }

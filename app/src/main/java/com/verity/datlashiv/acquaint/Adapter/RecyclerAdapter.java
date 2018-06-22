@@ -15,11 +15,10 @@ import com.verity.datlashiv.acquaint.R;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    Context context;
-    ArrayList<MainCourse> mainCourses;
+    private Context context;
+    private ArrayList<MainCourse> mainCourses;
 
     public RecyclerAdapter(){
-
     }
 
     public RecyclerAdapter(Context context, ArrayList<MainCourse> mainCourses) {
@@ -39,8 +38,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         MainCourse mc = mainCourses.get(position);
         holder.concepts.setText(mc.getName());
         holder.con_img.setImageResource(R.drawable.facebook);
-
-
     }
 
     @Override
@@ -54,8 +51,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-
             concepts = itemView.findViewById(R.id.title_row);
             con_img = itemView.findViewById(R.id.image_row);
         }

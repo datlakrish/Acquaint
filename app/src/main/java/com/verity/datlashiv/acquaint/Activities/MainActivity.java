@@ -48,36 +48,33 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
+                new RecyclerItemClickListener(getApplicationContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
 
-                        switch (position){
-                           case 0:
-                                Intent i = new Intent (MainActivity.this, OsActivity.class);
+                        switch (position) {
+                            case 0:
+                                Intent i = new Intent(MainActivity.this, OsActivity.class);
                                 startActivity(i);
                                 break;
                             case 1:
-                                Intent i2 = new Intent (MainActivity.this, LanguageActivity.class);
+                                Intent i2 = new Intent(MainActivity.this, LanguageActivity.class);
                                 startActivity(i2);
                                 break;
                             case 2:
-                                Intent i3 = new Intent (MainActivity.this, DataBaseActivity.class);
+                                Intent i3 = new Intent(MainActivity.this, DataBaseActivity.class);
                                 startActivity(i3);
                                 break;
 
-                             }
+                        }
 
-
-                        //Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
                     }
 
-                    @Override public void onLongItemClick(View view, int position) {
-                        // do whatever
+                    @Override
+                    public void onLongItemClick(View view, int position) {
                     }
                 })
         );
-
-
 
 
         viewFlipper = findViewById(R.id.viewFlipper);
@@ -85,7 +82,6 @@ public class MainActivity extends AppCompatActivity
         for (int views : view) {
             viewFlipper(views);
         }
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

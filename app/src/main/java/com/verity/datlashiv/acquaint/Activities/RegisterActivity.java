@@ -36,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         init();
-
         mAuth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference().child("user");
         modelArrayList = new ArrayList<>();
@@ -70,10 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Intent loginIntent = new Intent(RegisterActivity.this, MainActivity.class);
                                 startActivity(loginIntent);
                                 finish();
-//                                Toast.makeText(RegisterActivity.this, "Success", Toast.LENGTH_SHORT).show();
-//
                             } else {
-
                                 Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -82,8 +78,6 @@ public class RegisterActivity extends AppCompatActivity {
                     String id = reference.push().getKey();
                     Model model = new Model(id, user, email, pass);
                     reference.child(id).setValue(model);
-
-
                 }
             }
         });
