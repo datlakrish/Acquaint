@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
+import com.verity.datlashiv.acquaint.PVActivity;
 import com.verity.datlashiv.acquaint.R;
 import com.verity.datlashiv.acquaint.RecyclerItemClickListener;
 
@@ -22,7 +23,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class LanguageActivity extends AppCompatActivity {
+public class SubDataBase extends AppCompatActivity {
 
     private RecyclerView rv;
     private RecyclerAdapter recyclerAdapter;
@@ -61,7 +62,7 @@ public class LanguageActivity extends AppCompatActivity {
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(LanguageActivity.this, SubDataBase.class);
+                Intent intent = new Intent(SubDataBase.this, PVActivity.class);
                 startActivity(intent);
             }
 
@@ -90,5 +91,3 @@ public class LanguageActivity extends AppCompatActivity {
         return new String(builder);
     }
 }
-
-

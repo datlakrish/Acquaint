@@ -61,7 +61,7 @@ public class DataBaseActivity extends AppCompatActivity {
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(DataBaseActivity.this, OsActivity.class);
+                Intent intent = new Intent(DataBaseActivity.this, SubDataBase.class);
                 startActivity(intent);
             }
 

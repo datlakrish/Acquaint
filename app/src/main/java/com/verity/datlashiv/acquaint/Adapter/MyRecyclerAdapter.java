@@ -9,52 +9,51 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
 
+import java.util.ArrayList;
 
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
     private Context context;
-    private int image[] = {R.drawable.os, R.drawable.chrom, R.drawable.lang};
-    private String[] name = {"OS", "Languages", "DataBase"};
+    private ArrayList<MainCourse> mainCourses;
 
+    public MyRecyclerAdapter(){
+    }
 
-    public MainAdapter(Context context) {
+    public MyRecyclerAdapter(Context context, ArrayList<MainCourse> mainCourses) {
         this.context = context;
+        this.mainCourses = mainCourses;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.titleview.setText(name[position]);
-        holder.imageview.setImageResource(image[position]);
-
+        MainCourse mc = mainCourses.get(position);
+        holder.concepts.setText(mc.getName());
+        holder.con_img.setImageResource(R.drawable.facebook);
     }
 
     @Override
     public int getItemCount() {
-        return image.length;
+        return mainCourses.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
-
-        TextView titleview;
-        ImageView imageview;
+        TextView concepts;
+        ImageView con_img;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            titleview = itemView.findViewById(R.id.title_row);
-            imageview = itemView.findViewById(R.id.image_row);
+            concepts = itemView.findViewById(R.id.title_row);
+            con_img = itemView.findViewById(R.id.image_row);
         }
     }
 }

@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.verity.datlashiv.acquaint.Adapter.MainAdapter;
+import com.verity.datlashiv.acquaint.Adapter.MyRecyclerAdapter;
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
@@ -33,8 +33,8 @@ public class OsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_os);
-        rv = findViewById(R.id.recyclerView_view);
 
+        rv = findViewById(R.id.recyclerView_view);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         mc = new ArrayList<>();
@@ -46,33 +46,29 @@ public class OsActivity extends AppCompatActivity {
                 JSONArray array = object.getJSONArray("os_fields");
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
-
                     mc.add(new MainCourse(object1.getString("os_name")
                     ));
                 }
-
             }
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
+        recyclerAdapter = new RecyclerAdapter( getApplicationContext(), mc);
         rv.setAdapter(recyclerAdapter);
 
 
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(OsActivity.this, DataBaseActivity.class);
+
+                Intent intent = new Intent(OsActivity.this, SubDataBase.class);
                 startActivity(intent);
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
-
             }
         }));
-
     }
 
     private String RawJson() {
@@ -87,7 +83,6 @@ public class OsActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return new String(builder);
     }
 

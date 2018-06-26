@@ -24,9 +24,12 @@
             android:name=".Activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.RegisterActivity" />
-        <activity android:name=".Activities.OsActivity"/>
-        <activity android:name=".Activities.LanguageActivity"/>
-        <activity android:name=".Activities.DataBaseActivity"/>
+        <activity android:name=".Activities.OsActivity" />
+        <activity android:name=".Activities.LanguageActivity" />
+        <activity android:name=".Activities.DataBaseActivity" />
+        <activity android:name=".Activities.SubDataBase" />
+        <activity android:name=".PVActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

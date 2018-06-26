@@ -11,20 +11,22 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="2dp">
 
             <ImageView
-                android:scaleType="fitXY"
                 android:id="@+id/image_row"
-                android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_width="100dp"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent"
                 android:background="@color/colorAccent" />
 
-            <TextView android:id="@+id/title_row"
+            <TextView
+                android:id="@+id/title_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image_row"
+                android:layout_centerVertical="true"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="Color"
                 android:textSize="20sp"
