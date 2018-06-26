@@ -24,6 +24,7 @@ public class PVActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Tutorials");
 
 
+
         viewPager.setOffscreenPageLimit(getResources().getStringArray(R.array.tabs_name).length);
         tabLayout.setupWithViewPager(viewPager);
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), this);
