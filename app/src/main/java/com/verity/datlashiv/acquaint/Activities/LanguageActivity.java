@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class LanguageActivity extends AppCompatActivity {
 
     private RecyclerView rv;
-    private MyRecyclerAdapter recyclerAdapter;
+    private RecyclerAdapter recyclerAdapter;
     private ArrayList<MainCourse> mc;
 
     @Override
@@ -60,7 +60,7 @@ public class LanguageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        recyclerAdapter = new MyRecyclerAdapter(getApplicationContext(), mc);
+        recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
         rv.setAdapter(recyclerAdapter);
 
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {

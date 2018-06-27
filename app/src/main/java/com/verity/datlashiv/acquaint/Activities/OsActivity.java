@@ -105,6 +105,11 @@ public class OsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return new String(builder);
+    } @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
+
 
 }
