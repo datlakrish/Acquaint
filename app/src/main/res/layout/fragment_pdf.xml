@@ -5,15 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".PdfFragment">
 
-    <!--<com.github.barteksc.pdfviewer.PDFView-->
-    <!--android:id="@+id/pdfView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content" />-->
-
     <WebView
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/simpleWebView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none" />
+
 
 
 </FrameLayout>

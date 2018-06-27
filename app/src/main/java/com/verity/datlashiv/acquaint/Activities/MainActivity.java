@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
 
     private FirebaseAuth mAuth;
     private ViewFlipper viewFlipper;
-    private int view[] = {R.drawable.anydesk, R.drawable.chrom, R.drawable.os};
+    private int view[] = {R.drawable.view5, R.drawable.view3, R.drawable.view4};
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
