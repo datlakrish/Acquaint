@@ -55,39 +55,5 @@ public class VideoFragment extends Fragment {
         videoView.start();
 
 
-
-//        try {
-//            JSONObject jsonObject = new JSONObject(RawJson());
-//            JSONArray jsonArray = jsonObject.getJSONArray("acquaint");
-//            for (int i = 0; i < jsonArray.length(); i++) {
-//                JSONObject object = jsonArray.getJSONObject(i);
-//                JSONArray array = object.getJSONArray("Windows_concepts");
-//                for (int j = 0; j < array.length(); j++) {
-//                    JSONObject object1 = array.getJSONObject(j);
-//
-//                    mc.add(new MainCourse(object1.getString("imageUrl")
-//                    ));
-//                }
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
     }
-
-//    private String RawJson() {
-//        String JSONString = null;
-//        StringBuilder builder = new StringBuilder();
-//        try {
-//            InputStream inputStream = getResources().openRawResource(R.raw.raws);
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
-//            while ((JSONString = bufferedReader.readLine()) != null) {
-//                builder.append(JSONString);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return new String(builder);
-//    }
 }
