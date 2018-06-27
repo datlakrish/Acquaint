@@ -19,6 +19,7 @@ import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.verity.datlashiv.acquaint.Adapter.MainAdapter;
+import com.verity.datlashiv.acquaint.ProfileActivity;
 import com.verity.datlashiv.acquaint.R;
 import com.verity.datlashiv.acquaint.RecyclerItemClickListener;
 
@@ -129,19 +130,29 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
-            // Handle the camera action
+
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_tutorial) {
-            Toast.makeText(this, "Tutorial", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+
+
         } else if (id == R.id.nav_codeground) {
+
             Toast.makeText(this, "Code Ground", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_talkback) {
+
             Toast.makeText(this, "Talk Back", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_logout) {
+
             Logout();
         }
 

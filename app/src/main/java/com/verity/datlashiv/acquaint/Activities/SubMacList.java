@@ -23,7 +23,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class SubDataBase extends AppCompatActivity {
+public class SubMacList extends AppCompatActivity {
 
     private RecyclerView rv;
     private RecyclerAdapter recyclerAdapter;
@@ -43,11 +43,12 @@ public class SubDataBase extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray("acquaint");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
-                JSONArray array = object.getJSONArray("course_fields");
+                JSONArray array = object.getJSONArray("Mac_concepts");
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("co_name")
+                    mc.add(new MainCourse(object1.getString("mac_name"),
+                            object1.getString("imageUrl")
                     ));
                 }
             }
@@ -62,7 +63,7 @@ public class SubDataBase extends AppCompatActivity {
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(SubDataBase.this, PVActivity.class);
+                Intent intent = new Intent(SubMacList.this, PVActivity.class);
                 startActivity(intent);
             }
 

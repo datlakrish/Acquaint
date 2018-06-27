@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.system.Os;
 import android.view.View;
 
-import com.verity.datlashiv.acquaint.Adapter.MyRecyclerAdapter;
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
@@ -46,7 +46,8 @@ public class OsActivity extends AppCompatActivity {
                 JSONArray array = object.getJSONArray("os_fields");
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
-                    mc.add(new MainCourse(object1.getString("os_name")
+                    mc.add(new MainCourse(object1.getString("os_name"),
+                            object1.getString("imageUrl")
                     ));
                 }
             }
@@ -61,8 +62,24 @@ public class OsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
 
-                Intent intent = new Intent(OsActivity.this, SubDataBase.class);
-                startActivity(intent);
+                switch (position) {
+                    case 0:
+                        Intent i = new Intent(OsActivity.this, SubWindowsList.class);
+                        startActivity(i);
+                        break;
+                    case 1:
+                        Intent i2 = new Intent(OsActivity.this, SubLinuxList.class);
+                        startActivity(i2);
+                        break;
+                    case 2:
+                        Intent i3 = new Intent(OsActivity.this, SubUnixList.class);
+                        startActivity(i3);
+                        break;
+                    case 3:
+                        Intent i4 = new Intent(OsActivity.this, SubMacList.class);
+                        startActivity(i4);
+                        break;
+                }
             }
 
             @Override

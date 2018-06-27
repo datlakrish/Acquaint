@@ -27,9 +27,18 @@
         <activity android:name=".Activities.OsActivity" />
         <activity android:name=".Activities.LanguageActivity" />
         <activity android:name=".Activities.DataBaseActivity" />
-        <activity android:name=".Activities.SubDataBase" />
-        <activity android:name=".PVActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activities.SubWindowsList" />
+        <activity android:name=".Activities.SubLinuxList" />
+        <activity android:name=".Activities.SubMacList" />
+        <activity android:name=".Activities.SubUnixList" />
+
+
+        <activity
+            android:name=".PVActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".Activities.MainActivity"></activity>
     </application>
 
 </manifest>

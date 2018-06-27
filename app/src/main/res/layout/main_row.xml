@@ -15,18 +15,20 @@
             android:layout_margin="2dp">
 
             <ImageView
-                android:scaleType="fitXY"
                 android:id="@+id/image_row"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:background="@color/colorAccent" />
+                android:scaleType="fitXY" />
 
-            <TextView android:id="@+id/title_row"
+            <TextView
+                android:id="@+id/title_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/image_row"
+                android:background="@color/colorPrimary"
                 android:padding="10dp"
                 android:text="Color"
+                android:textColor="#fefefe"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

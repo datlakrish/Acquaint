@@ -46,7 +46,8 @@ public class DataBaseActivity extends AppCompatActivity {
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("db_name")
+                    mc.add(new MainCourse(object1.getString("db_name"),
+                            object1.getString("imageUrl")
                     ));
                 }
 
@@ -61,7 +62,7 @@ public class DataBaseActivity extends AppCompatActivity {
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(DataBaseActivity.this, SubDataBase.class);
+                Intent intent = new Intent(DataBaseActivity.this, SubWindowsList.class);
                 startActivity(intent);
             }
 

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
 
@@ -37,7 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainCourse mc = mainCourses.get(position);
         holder.concepts.setText(mc.getName());
-        holder.con_img.setImageResource(R.drawable.facebook);
+        Picasso.with(context).load(mc.getImage()).fit().into(holder.con_img);
     }
 
     @Override

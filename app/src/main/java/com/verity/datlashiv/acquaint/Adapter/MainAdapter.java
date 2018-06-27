@@ -17,7 +17,7 @@ import com.verity.datlashiv.acquaint.R;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private Context context;
-    private int image[] = {R.drawable.os, R.drawable.chrom, R.drawable.lang};
+    private int image[] = {R.drawable.os, R.drawable.lang, R.drawable.db};
     private String[] name = {"OS", "Languages", "DataBase"};
 
 

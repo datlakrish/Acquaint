@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
+import com.verity.datlashiv.acquaint.PVActivity;
 import com.verity.datlashiv.acquaint.R;
 import com.verity.datlashiv.acquaint.RecyclerItemClickListener;
 
@@ -22,7 +23,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class LanguageActivity extends AppCompatActivity {
+public class SubWindowsList extends AppCompatActivity {
 
     private RecyclerView rv;
     private RecyclerAdapter recyclerAdapter;
@@ -42,11 +43,12 @@ public class LanguageActivity extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray("acquaint");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
-                JSONArray array = object.getJSONArray("course_fields");
+                JSONArray array = object.getJSONArray("Windows_concepts");
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("co_name"),object1.getString("imageUrl")
+                    mc.add(new MainCourse(object1.getString("windows_name"),
+                            object1.getString("imageUrl")
                     ));
                 }
             }
@@ -61,7 +63,7 @@ public class LanguageActivity extends AppCompatActivity {
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(LanguageActivity.this, SubWindowsList.class);
+                Intent intent = new Intent(SubWindowsList.this, PVActivity.class);
                 startActivity(intent);
             }
 
@@ -90,5 +92,3 @@ public class LanguageActivity extends AppCompatActivity {
         return new String(builder);
     }
 }
-
-
