@@ -30,7 +30,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -38,7 +38,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainCourse mc = mainCourses.get(position);
         holder.concepts.setText(mc.getName());
-        holder.con_img.setImageResource(R.drawable.facebook);
     }
 
     @Override
@@ -48,12 +47,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView concepts;
-        ImageView con_img;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            concepts = itemView.findViewById(R.id.title_row);
-            con_img = itemView.findViewById(R.id.image_row);
+            concepts = itemView.findViewById(R.id.single_row);
         }
     }
 }

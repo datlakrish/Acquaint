@@ -38,6 +38,10 @@ public class OsActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         mc = new ArrayList<>();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         try {
             JSONObject jsonObject = new JSONObject(RawJson());
             JSONArray jsonArray = jsonObject.getJSONArray("acquaint");

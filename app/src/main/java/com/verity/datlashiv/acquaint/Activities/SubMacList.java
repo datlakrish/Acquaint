@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.verity.datlashiv.acquaint.Adapter.MyRecyclerAdapter;
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.PVActivity;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class SubMacList extends AppCompatActivity {
 
     private RecyclerView rv;
-    private RecyclerAdapter recyclerAdapter;
+    private MyRecyclerAdapter recyclerAdapter;
     private ArrayList<MainCourse> mc;
 
     @Override
@@ -34,6 +35,9 @@ public class SubMacList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_os);
         rv = findViewById(R.id.recyclerView_view);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -47,8 +51,7 @@ public class SubMacList extends AppCompatActivity {
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("mac_name"),
-                            object1.getString("imageUrl")
+                    mc.add(new MainCourse(object1.getString("mac_name")
                     ));
                 }
             }
@@ -57,7 +60,7 @@ public class SubMacList extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
+        recyclerAdapter = new MyRecyclerAdapter(getApplicationContext(), mc);
         rv.setAdapter(recyclerAdapter);
 
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
@@ -74,6 +77,12 @@ public class SubMacList extends AppCompatActivity {
         }));
 
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private String RawJson() {

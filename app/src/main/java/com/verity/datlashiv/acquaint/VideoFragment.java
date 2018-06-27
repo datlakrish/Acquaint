@@ -27,9 +27,6 @@ import java.util.ArrayList;
 
 public class VideoFragment extends Fragment {
 
-    private ArrayList<MainCourse> mc;
-
-
     public VideoFragment() {
     }
 
@@ -46,7 +43,6 @@ public class VideoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         VideoView videoView;
-
         videoView = view.findViewById(R.id.videoView);
         String url = "http://techslides.com/demos/sample-videos/small.mp4";
         videoView.setVideoURI(Uri.parse(url));

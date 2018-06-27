@@ -23,6 +23,9 @@ public class PVActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Tutorials");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
 
         viewPager.setOffscreenPageLimit(getResources().getStringArray(R.array.tabs_name).length);
@@ -31,5 +34,12 @@ public class PVActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
 
+    }
+
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

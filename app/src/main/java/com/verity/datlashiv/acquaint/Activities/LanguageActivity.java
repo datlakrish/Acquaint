@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.verity.datlashiv.acquaint.Adapter.MyRecyclerAdapter;
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 public class LanguageActivity extends AppCompatActivity {
 
     private RecyclerView rv;
-    private RecyclerAdapter recyclerAdapter;
+    private MyRecyclerAdapter recyclerAdapter;
     private ArrayList<MainCourse> mc;
 
     @Override
@@ -33,6 +34,10 @@ public class LanguageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_os);
         rv = findViewById(R.id.recyclerView_view);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -46,7 +51,7 @@ public class LanguageActivity extends AppCompatActivity {
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("co_name"),object1.getString("imageUrl")
+                    mc.add(new MainCourse(object1.getString("co_name")
                     ));
                 }
             }
@@ -55,7 +60,7 @@ public class LanguageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        recyclerAdapter = new RecyclerAdapter(getApplicationContext(), mc);
+        recyclerAdapter = new MyRecyclerAdapter(getApplicationContext(), mc);
         rv.setAdapter(recyclerAdapter);
 
         rv.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv, new RecyclerItemClickListener.OnItemClickListener() {
@@ -89,6 +94,12 @@ public class LanguageActivity extends AppCompatActivity {
 
         return new String(builder);
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }
 
 

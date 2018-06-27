@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.verity.datlashiv.acquaint.Adapter.MyRecyclerAdapter;
 import com.verity.datlashiv.acquaint.Adapter.RecyclerAdapter;
 import com.verity.datlashiv.acquaint.ModelClasses.MainCourse;
 import com.verity.datlashiv.acquaint.R;
@@ -34,6 +35,10 @@ public class DataBaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_os);
         rv = findViewById(R.id.recyclerView_view);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         mc = new ArrayList<>();
@@ -46,8 +51,7 @@ public class DataBaseActivity extends AppCompatActivity {
                 for (int j = 0; j < array.length(); j++) {
                     JSONObject object1 = array.getJSONObject(j);
 
-                    mc.add(new MainCourse(object1.getString("db_name"),
-                            object1.getString("imageUrl")
+                    mc.add(new MainCourse(object1.getString("db_name")
                     ));
                 }
 
@@ -90,4 +94,11 @@ public class DataBaseActivity extends AppCompatActivity {
 
         return new String(builder);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }
